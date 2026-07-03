@@ -116,15 +116,15 @@
 <script>
 // ============ DADOS (atualização mensal — substituir este bloco) ============
 const REF_MONTH = '2026-06';
-const UPDATED = '2026-07-02';
+const UPDATED = '2026-07-03';
 // Séries jan/2025 → mês de referência — valores APROXIMADOS (fontes públicas). Mesmo nº de elementos que i18n.months.
 const SERIES = {
-  copper:   [9100, 9300, 9700, 9200, 9500, 9700, 9650, 9800, 10200, 10800, 11300, 12100, 13100, 12900, 13000, 13000, 12850, 13250],
-  aluminum: [2590, 2640, 2680, 2400, 2450, 2480, 2560, 2600, 2650, 2700, 2800, 2880, 3150, 3060, 3200, 3450, 3550, 3480],
+  copper:   [9100, 9300, 9700, 9200, 9500, 9700, 9650, 9800, 10200, 10800, 11300, 12100, 13100, 12900, 13000, 12900, 13510, 13570],
+  aluminum: [2590, 2640, 2680, 2400, 2450, 2480, 2560, 2600, 2650, 2700, 2800, 2880, 3150, 3060, 3200, 3600, 3675, 3460],
   steel:    [750, 830, 930, 930, 890, 880, 900, 880, 890, 910, 930, 960, 990, 1020, 1050, 1146, 1165, 1185],
   wci:      [3450, 2950, 2600, 2300, 2100, 3200, 2600, 2200, 1900, 1750, 1650, 1800, 2400, 2550, 2650, 2700, 2790, 3800],
   brl:      [6.05, 5.80, 5.75, 5.85, 5.65, 5.50, 5.55, 5.45, 5.35, 5.40, 5.35, 5.48, 5.42, 5.30, 5.18, 5.05, 4.98, 5.17],
-  mxn:      [20.6, 20.4, 20.2, 20.0, 19.4, 19.0, 18.8, 18.7, 18.4, 18.3, 18.1, 17.9, 17.6, 17.8, 18.0, 17.7, 17.4, 17.5],
+  mxn:      [20.6, 20.4, 20.2, 20.0, 19.4, 19.0, 18.8, 18.7, 18.4, 18.3, 18.1, 17.9, 17.6, 17.8, 18.0, 17.7, 17.4, 17.4],
   ars:      [1050, 1065, 1075, 1120, 1140, 1165, 1280, 1340, 1420, 1450, 1440, 1470, 1490, 1450, 1420, 1395, 1380, 1450],
   clp:      [995, 945, 930, 955, 935, 930, 950, 960, 940, 930, 910, 890, 880, 862, 910, 898, 898, 900]
 };
@@ -141,9 +141,9 @@ const NEWS = [
    es:{title:'Comercio de EE.UU. entrega evaluación del cobre refinado el 30/06', body:'El Dept. de Comercio entregó su evaluación Section 232 del mercado de cobre refinado, base para decidir un arancel universal en fases: 15% desde ene/2027 y 30% en ene/2028. Goldman Sachs ve el cobre sobre US$ 14.000/t en el 2º semestre si los aranceles entran en vigor.'}},
   {cat:'metal', topic:'aluminum', date:'2026-06-19', source:'Discovery Alert / LME',
    url:'https://discoveryalert.com.au/lme-aluminium-prices-june-4-2026-correction-inventory/',
-   pt:{title:'Alumínio bate máxima de 4 anos (~US$ 3.855/t) e recua ~9% após desescalada no Golfo', body:'O conflito com o Irã provocou paradas de produção no Oriente Médio e levou o alumínio à maior cotação desde 2022 no início de junho. Após o acordo-quadro EUA-Irã de 17/06, o 3 meses LME caiu para ~US$ 3.400/t, fechando o mês perto de US$ 3.200/t.'},
-   en:{title:'Aluminium hits 4-year high (~$3,855/t), then drops ~9% on Gulf de-escalation', body:'The Iran conflict triggered smelter shutdowns across the Middle East, pushing aluminium to its highest level since 2022 in early June. After the June 17 US-Iran framework deal, LME 3-month fell to ~$3,400/t, ending the month near $3,200/t.'},
-   es:{title:'Aluminio toca máximo de 4 años (~US$ 3.855/t) y cae ~9% tras la desescalada en el Golfo', body:'El conflicto con Irán provocó paradas de producción en Medio Oriente y llevó el aluminio a su mayor nivel desde 2022 a inicios de junio. Tras el acuerdo marco EE.UU.-Irán del 17/06, el LME a 3 meses cayó a ~US$ 3.400/t, cerrando el mes cerca de US$ 3.200/t.'}},
+   pt:{title:'Alumínio bate máxima de 4 anos (~US$ 3.855/t) e recua ~9% após desescalada no Golfo', body:'O conflito com o Irã provocou paradas de produção no Oriente Médio e levou o alumínio à maior cotação desde 2022 no início de junho. Após o acordo-quadro EUA-Irã de 17/06, o 3 meses LME caiu para ~US$ 3.400/t, fechando o mês perto de US$ 3.100/t.'},
+   en:{title:'Aluminium hits 4-year high (~$3,855/t), then drops ~9% on Gulf de-escalation', body:'The Iran conflict triggered smelter shutdowns across the Middle East, pushing aluminium to its highest level since 2022 in early June. After the June 17 US-Iran framework deal, LME 3-month fell to ~$3,400/t, ending the month near $3,100/t.'},
+   es:{title:'Aluminio toca máximo de 4 años (~US$ 3.855/t) y cae ~9% tras la desescalada en el Golfo', body:'El conflicto con Irán provocó paradas de producción en Medio Oriente y llevó el aluminio a su mayor nivel desde 2022 a inicios de junio. Tras el acuerdo marco EE.UU.-Irán del 17/06, el LME a 3 meses cayó a ~US$ 3.400/t, cerrando el mes cerca de US$ 3.100/t.'}},
   {cat:'freight', topic:'freight', date:'2026-06-25', source:'Drewry',
    url:'https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry',
    pt:{title:'Drewry WCI sobe 5% e atinge US$ 4.166/40ft — maior nível em 22 meses', body:'Na semana de 25/06 o índice composto alcançou o maior patamar desde set/2024, puxado pelo Transpacífico: Shanghai→NY +6% (US$ 7.149) e Shanghai→LA +12% (US$ 5.750). Apenas 3 blank sailings anunciados na Ásia-Europa indicam capacidade apertada.'},
@@ -178,7 +178,7 @@ const MONTHS_ES=['Ene/25','Feb/25','Mar/25','Abr/25','May/25','Jun/25','Jul/25',
 const i18n = {
   pt:{
     sub:'Matérias-primas, câmbio e frete — base de custos dos produtos Copeland na América Latina (AR · CL · BR · MX)',
-    meta:'Referência: junho 2026 · Atualizado em 02/07/2026 · Todos os valores em USD · Câmbio: média/fechamento mensal aproximado',
+    meta:'Referência: junho 2026 · Atualizado em 03/07/2026 · Todos os valores em USD · Câmbio: média/fechamento mensal aproximado',
     months:MONTHS_PT,
     kpiTitle:'Indicadores-chave — jun/26 vs. mai/26',
     chartsTitle:'Matérias-primas — jan/25 a jun/26 (USD/t)',
@@ -190,8 +190,8 @@ const i18n = {
     prevLabel:'mês anterior',momLabel:'m/m',ytdLabel:'no ano',
     avgLabel:'Média',topicLabels:{sector:'Setor & Tarifas',copper:'Cobre',aluminum:'Alumínio',steel:'Aço',freight:'Frete',fx:'Câmbio'},
     kpiNotes:{
-      copper:'Escassez física (estoques LME perto de mínimas) e tarifas dos EUA sustentam o patamar recorde; a decisão do Section 232 do refinado pode levar o metal acima de US$ 14.000/t no 2º semestre.',
-      aluminum:'Mês volátil: pico de 4 anos (~US$ 3.855/t) com o conflito no Golfo e recuo de ~9% após a desescalada de 17/06; CBAM na Europa e teto de capacidade na China mantêm o piso elevado.',
+      copper:'Cobre praticamente estável m/m em junho (média ~US$ 13.570/t), consolidando o patamar recorde após o pico de 13/05 (US$ 14.097). Estoques seguem migrando ao COMEX (recorde ~652 kt) à espera da decisão do Section 232 do refinado — Goldman vê >US$ 14.000/t no 2º semestre se confirmada.',
+      aluminum:'Mês volátil: pico de 4 anos (~US$ 3.855/t) com o conflito no Golfo e queda de ~19% até o fechamento (~US$ 3.105/t) após a desescalada de 17/06; CBAM na Europa e teto de capacidade na China mantêm o piso elevado.',
       steel:'Tarifa de 50% sobre importados e demanda doméstica forte sustentam ~+20% no ano; a pausa da Nucor em 29/06, após aumentos semanais desde janeiro, sugere acomodação no 3º trimestre.',
       wci:'Maior nível em 22 meses e ~2x o piso de nov-dez/25 — pressão de custo landed para LATAM no 2º semestre, com repasse típico em 1-2 trimestres.'
     },
@@ -216,7 +216,7 @@ const i18n = {
   },
   en:{
     sub:'Raw materials, FX and freight — cost base of Copeland products in Latin America (AR · CL · BR · MX)',
-    meta:'Reference: June 2026 · Updated Jul 2, 2026 · All values in USD · FX: approximate monthly average/close',
+    meta:'Reference: June 2026 · Updated Jul 3, 2026 · All values in USD · FX: approximate monthly average/close',
     months:MONTHS_EN,
     kpiTitle:'Key indicators — Jun/26 vs. May/26',
     chartsTitle:'Raw materials — Jan/25 to Jun/26 (USD/t)',
@@ -228,8 +228,8 @@ const i18n = {
     prevLabel:'previous month',momLabel:'MoM',ytdLabel:'YTD',
     avgLabel:'Avg',topicLabels:{sector:'Sector & Tariffs',copper:'Copper',aluminum:'Aluminium',steel:'Steel',freight:'Freight',fx:'FX'},
     kpiNotes:{
-      copper:'Physical scarcity (LME stocks near record lows) and US tariffs support record levels; the Section 232 refined-copper decision could push the metal above $14,000/t in H2.',
-      aluminum:'Volatile month: 4-year high (~$3,855/t) on the Gulf conflict, then a ~9% pullback after the June 17 de-escalation; EU CBAM and the China capacity cap keep the floor elevated.',
+      copper:'Copper was roughly flat MoM in June (avg ~$13,570/t), consolidating record territory after the May 13 peak ($14,097). Inventories keep shifting to COMEX (record ~652 kt) ahead of the Section 232 refined-copper decision — Goldman sees >$14,000/t in H2 if confirmed.',
+      aluminum:'Volatile month: 4-year high (~$3,855/t) on the Gulf conflict, then a ~19% slide to the month-end close (~$3,105/t) after the June 17 de-escalation; EU CBAM and the China capacity cap keep the floor elevated.',
       steel:'The 50% import tariff and strong domestic demand support ~+20% YTD; the Nucor pause on June 29, after weekly hikes since January, points to consolidation in Q3.',
       wci:'Highest in 22 months and ~2x the Nov-Dec/25 floor — landed-cost pressure for LATAM in H2, with pass-through typically lagging 1-2 quarters.'
     },
@@ -254,7 +254,7 @@ const i18n = {
   },
   es:{
     sub:'Materias primas, tipo de cambio y flete — base de costos de los productos Copeland en América Latina (AR · CL · BR · MX)',
-    meta:'Referencia: junio 2026 · Actualizado el 02/07/2026 · Todos los valores en USD · Cambio: promedio/cierre mensual aproximado',
+    meta:'Referencia: junio 2026 · Actualizado el 03/07/2026 · Todos los valores en USD · Cambio: promedio/cierre mensual aproximado',
     months:MONTHS_ES,
     kpiTitle:'Indicadores clave — jun/26 vs. may/26',
     chartsTitle:'Materias primas — ene/25 a jun/26 (USD/t)',
@@ -266,8 +266,8 @@ const i18n = {
     prevLabel:'mes anterior',momLabel:'m/m',ytdLabel:'en el año',
     avgLabel:'Promedio',topicLabels:{sector:'Sector & Aranceles',copper:'Cobre',aluminum:'Aluminio',steel:'Acero',freight:'Flete',fx:'Cambio'},
     kpiNotes:{
-      copper:'La escasez física (inventarios LME cerca de mínimos) y los aranceles de EE.UU. sostienen el nivel récord; la decisión del Section 232 del refinado puede llevar el metal sobre US$ 14.000/t en el 2º semestre.',
-      aluminum:'Mes volátil: máximo de 4 años (~US$ 3.855/t) por el conflicto en el Golfo y retroceso de ~9% tras la desescalada del 17/06; el CBAM europeo y el techo de capacidad en China mantienen el piso elevado.',
+      copper:'Cobre prácticamente estable m/m en junio (promedio ~US$ 13.570/t), consolidando terreno récord tras el pico del 13/05 (US$ 14.097). Los inventarios siguen migrando al COMEX (récord ~652 kt) a la espera de la decisión del Section 232 del refinado — Goldman ve >US$ 14.000/t en el 2º semestre si se confirma.',
+      aluminum:'Mes volátil: máximo de 4 años (~US$ 3.855/t) por el conflicto en el Golfo y caída de ~19% hasta el cierre (~US$ 3.105/t) tras la desescalada del 17/06; el CBAM europeo y el techo de capacidad en China mantienen el piso elevado.',
       steel:'El arancel del 50% a importados y la demanda interna fuerte sostienen ~+20% en el año; la pausa de Nucor el 29/06, tras alzas semanales desde enero, sugiere consolidación en el 3er trimestre.',
       wci:'Mayor nivel en 22 meses y ~2x el piso de nov-dic/25 — presión de costo landed para LATAM en el 2º semestre, con traspaso típico de 1-2 trimestres.'
     },
