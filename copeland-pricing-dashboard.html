@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,8 +68,8 @@
     <div class="header-meta" id="header-meta"></div>
   </div>
   <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('pt')">PT</button>
     <button class="lang-btn" onclick="setLang('es')">ES</button>
   </div>
 </header>
@@ -291,7 +291,7 @@ const i18n = {
     labels:{tariff:'Aranceles',metal:'Metales',freight:'Flete',fx:'Cambio'}
   }
 };
-let currentLang='pt';
+let currentLang='en';
 let charts={};
 function momPct(s){ return (s[s.length-1]-s[s.length-2])/s[s.length-2]*100; }
 function ytdPct(s){ return (s[s.length-1]-s[12])/s[12]*100; } // vs. jan do ano corrente (índice 12)
@@ -324,7 +324,7 @@ function makeLine(canvasId,data,labels,color,fill){
   return new Chart(document.getElementById(canvasId),{type:'line',data:{labels:labels,datasets:[{data:data,borderColor:color,backgroundColor:fill?'rgba(15,60,255,0.08)':color,fill:!!fill,tension:.3,pointRadius:2.5,pointHoverRadius:5,borderWidth:2}]},options:baseOpts()});
 }
 function renderCharts(){
-  if(typeof Chart==='undefined'){document.querySelectorAll('.chart-wrap').forEach(w=>{w.innerHTML='<p style="padding:20px;color:#828383;font-size:.8rem">Não foi possível carregar a biblioteca de gráficos neste ambiente.</p>';});return;}
+  if(typeof Chart==='undefined'){document.querySelectorAll('.chart-wrap').forEach(w=>{w.innerHTML='<p style="padding:20px;color:#828383;font-size:.8rem">Could not load the chart library in this environment.</p>';});return;}
   const t=i18n[currentLang];
   Object.values(charts).forEach(c=>c.destroy());
   const m=t.months;
@@ -377,7 +377,7 @@ function setLang(l){
   document.getElementById('footer').innerHTML=t.footer;
   renderKpis(); renderNews(); renderCharts();
 }
-setLang('pt');
+setLang('en');
 
 </script>
 </body>
